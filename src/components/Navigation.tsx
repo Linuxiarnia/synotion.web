@@ -9,7 +9,7 @@ import styled from '@emotion/styled';
 const MyButton = styled(Button)<ButtonProps>(({ theme, href }) => ((href==window.location.pathname)? { color: (theme as Theme).palette.primary.main } : { color: (theme as Theme).palette.text.primary }));
 
 
-export const NavBar = ({ location } : { location: string }) => {
+export const NavBar = () => {
     // type Page = 'Home' | 'Leaderboards' | 'Profile' | 'Settings';
     const theme = useTheme();
  

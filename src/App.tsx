@@ -3,7 +3,6 @@ import { AppContent } from './AppContent';
 import { Button, CssBaseline, ThemeProvider, 
     useMediaQuery } from '@mui/material';
 import { buildTheme } from '@theme/theme';
-import { NavBar } from '@components/Navigation';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './layout/Layout';
 
@@ -30,7 +29,6 @@ const App: React.FC = () => {
             <CssBaseline />
             <AppContent />
             <Layout>
-                <NavBar location={location.pathname}></NavBar>
                 <RouterProvider router={router}></RouterProvider>
                 <Button onClick={() => setMode(prev => !prev)}>
                     ToggleTheme
