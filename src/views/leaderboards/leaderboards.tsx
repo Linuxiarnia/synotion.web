@@ -1,4 +1,4 @@
-import { Box, Card, Divider, Grid2 } from '@mui/material';
+import { Box, Card, Divider, Grid2, useTheme } from '@mui/material';
 import React from 'react';
 
 interface playerEntry{
@@ -39,6 +39,9 @@ const userEntry: playerEntry = {
 };
 
 export const Leaderboards = () => {
+
+    const theme = useTheme();
+
     return(
         <Card sx={{
             padding: '10px', margin: '10px', height: '80%' 
@@ -78,7 +81,9 @@ export const Leaderboards = () => {
                     })
                 }
                 {isInTop? '' :              
-                    <Divider orientation='horizontal' sx={{ width: '5px' }} variant='middle' />
+                    <Divider orientation='horizontal'  variant='middle' sx={{
+                        color: theme.palette.primary.main, height: '3px', marginY: '10px', background: theme.palette.primary.main
+                    }} />
                 }
                 {isInTop? '':
                     <Grid2 container key = {'userEntry'}  spacing={2}>
