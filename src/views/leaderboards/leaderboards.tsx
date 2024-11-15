@@ -1,4 +1,4 @@
-import { Box, Divider, Grid2 } from '@mui/material';
+import { Box, Card, Divider, Grid2 } from '@mui/material';
 import React from 'react';
 
 interface playerEntry{
@@ -40,14 +40,27 @@ const userEntry: playerEntry = {
 
 export const Leaderboards = () => {
     return(
-        <div>
+        <Card sx={{
+            padding: '10px', margin: '10px', height: '80%' 
+        }}>
             <center><h1>LEADERBOARD</h1></center>
+            <Grid2 container key = {'legend'}  spacing={2}>
+                <Grid2 size={8}>
+                    username
+                </Grid2>
+                <Grid2 size={2}>
+                    level
+                </Grid2>
+                <Grid2 size={2}>
+                    points
+                </Grid2>
+            </Grid2>
             <Grid2 justifyContent={'center'}>
                 {/* top10 */}
                 {
                     data.map((player, i) => {
                         return(
-                            <Grid2 container key = {i} spacing={2}>
+                            <Grid2 container key = {i} spacing={2} sx={{ marginY: '5px' }}>
                                 <Grid2 size={1}>
                                     {player.position}
                                 </Grid2>
@@ -86,6 +99,6 @@ export const Leaderboards = () => {
 
 
             </Grid2>
-        </div>
+        </Card>
     );
 };
