@@ -4,6 +4,7 @@ import { Button, CssBaseline, ThemeProvider,
     useMediaQuery } from '@mui/material';
 import { buildTheme } from '@theme/theme';
 
+//random bullshit change lmao
 const App: React.FC = () => {
     const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
     const [mode, setMode] = useState<boolean>(isDarkMode);
