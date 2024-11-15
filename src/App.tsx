@@ -6,6 +6,7 @@ import { buildTheme } from '@theme/theme';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './layout/Layout';
 import { Profile } from '@views/profile/profile';
+import { Leaderboards } from '@views/leaderboards/leaderboards';
 
 
 const router = createBrowserRouter([
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/leaderboards',
-        element: null
+        element: <Leaderboards/>
     },
     {
         path: '/profile',
