@@ -18,7 +18,9 @@ export const NavBar = () => {
     console.log(location.pathname);
 
     return(
-        <div className='navigation'>
+        <Box className='navigation' sx={{
+            borderRightColor: theme.palette.primary.main, borderWidth: '3px', borderRightStyle: 'solid' 
+        }}>
 
             <span>
                 <Box sx={{ bgcolor: 'none' , m: 2 }}>
@@ -36,6 +38,6 @@ export const NavBar = () => {
             <div className='logoutContainer'>
                 <div><MyButton onClick={() => {/* logout */}}>Icon: Log out</MyButton></div>
             </div>
-        </div>
+        </Box>
     );
 };
