@@ -1,4 +1,4 @@
-import { Box, Button, ButtonProps, Typography, useTheme } from '@mui/material';
+import { Box, Button, ButtonProps, Theme, Typography, useTheme } from '@mui/material';
 import React from 'react';
 // import { useLocation } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ import './Navigation.css';
 import styled from '@emotion/styled';
 
 //myButton zwraca blad, ale dziala lol
-const MyButton = styled(Button)<ButtonProps>(({ theme }) => ({ color: theme.palette.text.primary }));
+const MyButton = styled(Button)<ButtonProps>(({ theme }) => ({ color: (theme as Theme).palette.text.primary }));
 
 
 export const NavBar = () => {
