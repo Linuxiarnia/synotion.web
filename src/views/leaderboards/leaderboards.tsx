@@ -1,4 +1,4 @@
-import { Divider, Grid2 } from '@mui/material';
+import { Box, Divider, Grid2 } from '@mui/material';
 import React from 'react';
 
 interface playerEntry{
@@ -16,7 +16,20 @@ const getLeaderboard = () => {
     isInTop = false; //or true idk
 };
 
-const data: playerEntry[] = [];
+const data: playerEntry[] = [
+    {
+        position: 1,
+        username: 'placeholder',
+        level: 123,
+        points: 312 
+    },
+    {
+        position: 1,
+        username: 'placeholder',
+        level: 123,
+        points: 312 
+    }
+];
 
 const userEntry: playerEntry = {
     position: 0,
@@ -27,49 +40,52 @@ const userEntry: playerEntry = {
 
 export const Leaderboards = () => {
     return(
-        <Grid2 columns={1}>
-            {/* top10 */}
-            {
-                data.map((player, i) => {
-                    return(
-                        <Grid2 key = {i}>
-                            <Grid2 size={2}>
-                                {player.position}
+        <div>
+            <center><h1>LEADERBOARD</h1></center>
+            <Grid2 justifyContent={'center'}>
+                {/* top10 */}
+                {
+                    data.map((player, i) => {
+                        return(
+                            <Grid2 container key = {i} spacing={2}>
+                                <Grid2 size={1}>
+                                    {player.position}
+                                </Grid2>
+                                <Grid2 size={7}>
+                                    {player.username}
+                                </Grid2>
+                                <Grid2 size={2}>
+                                    {player.level}
+                                </Grid2>
+                                <Grid2 size={2}>
+                                    {player.points}
+                                </Grid2>
                             </Grid2>
-                            <Grid2 size={10}>
-                                {player.username}
-                            </Grid2>
-                            <Grid2 size = {4}>
-                                {player.level}
-                            </Grid2>
-                            <Grid2 size = {4}>
-                                {player.points}
-                            </Grid2>
+                        );
+                    })
+                }
+                {isInTop? '' :              
+                    <Divider orientation='horizontal' sx={{ width: '5px' }} variant='middle' />
+                }
+                {isInTop? '':
+                    <Grid2 container key = {'userEntry'}  spacing={2}>
+                        <Grid2 size={1}>
+                            {userEntry.position}
                         </Grid2>
-                    );
-                })
-            }
-            {isInTop? '' :              
-                <Divider flexItem orientation='horizontal' />
-            }
-            {isInTop? '':
-                <Grid2 key = {'userEntry'}>
-                    <Grid2 size={2}>
-                        {userEntry.position}
+                        <Grid2 size={7}>
+                            {userEntry.username}
+                        </Grid2>
+                        <Grid2 size={2}>
+                            {userEntry.level}
+                        </Grid2>
+                        <Grid2 size={2}>
+                            {userEntry.points}
+                        </Grid2>
                     </Grid2>
-                    <Grid2 size={10}>
-                        {userEntry.username}
-                    </Grid2>
-                    <Grid2 size = {4}>
-                        {userEntry.level}
-                    </Grid2>
-                    <Grid2 size = {4}>
-                        {userEntry.points}
-                    </Grid2>
-                </Grid2>
-            }
+                }
 
 
-        </Grid2>
+            </Grid2>
+        </div>
     );
 };
