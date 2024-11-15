@@ -5,6 +5,7 @@ import { Button, CssBaseline, ThemeProvider,
 import { buildTheme } from '@theme/theme';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './layout/Layout';
+import { Profile } from '@views/profile/profile';
 
 
 const router = createBrowserRouter([
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     {
         path: '/leaderboards',
         element: null
+    },
+    {
+        path: '/profile',
+        element: <Profile/>
     }
 ]);
 
