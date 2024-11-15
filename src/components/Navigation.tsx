@@ -1,21 +1,19 @@
 import { Box, Button, ButtonProps, Theme, Typography, useTheme } from '@mui/material';
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+
 
 import './Navigation.css';
 import styled from '@emotion/styled';
 
 //myButton zwraca blad, ale dziala lol
-const MyButton = styled(Button)<ButtonProps>(({ theme, href }) => ((href==location.pathname)? { color: (theme as Theme).palette.primary.main } : { color: (theme as Theme).palette.text.primary }));
+const MyButton = styled(Button)<ButtonProps>(({ theme, href }) => ((href==window.location.pathname)? { color: (theme as Theme).palette.primary.main } : { color: (theme as Theme).palette.text.primary }));
 
 
-export const NavBar = () => {
+export const NavBar = ({ location } : { location: string }) => {
     // type Page = 'Home' | 'Leaderboards' | 'Profile' | 'Settings';
     const theme = useTheme();
-    
-    const location = useLocation();
-
-    console.log(location.pathname);
+ 
+    console.log(location);
 
     return(
         <Box className='navigation' sx={{
