@@ -23,6 +23,12 @@
     margin-right: auto;
 }
 
+.logoutContainer, .logoContainer{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .navContainer div button{
     width: auto;
     text-align: left;

@@ -1,8 +1,8 @@
-import { Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import React, { useState } from 'react';
 
-
 import './Navigation.css';
+
 
 export const NavBar = () => {
 
@@ -13,19 +13,22 @@ export const NavBar = () => {
 
     return(
         <div className='navigation'>
+
             <span>
-                <div className='logoContainer'>
-                    LOGO HERE
-                </div>
+                <Box sx={{ bgcolor: 'primary.light' }}>
+                    <Typography color='primary' variant='body1'>
+                        placeholderLogo
+                    </Typography>
+                </Box>  
                 <div className='navContainer'>
-                    <div><Button onClick={() => setCurrentPage('Home')}>Icon: Play</Button></div>
-                    <div><Button onClick={() => setCurrentPage('Leaderboards')}>Leaderboards</Button></div>
-                    <div><Button onClick={() => setCurrentPage('Profile')}>Profile</Button></div>
-                    <div><Button onClick={() => setCurrentPage('Settings')}>Settings</Button></div>
+                    <Box><Button onClick={() => setCurrentPage('Home')}>Icon: Play</Button></Box>
+                    <Box><Button onClick={() => setCurrentPage('Leaderboards')}>Leaderboards</Button></Box>
+                    <Box><Button onClick={() => setCurrentPage('Profile')}>Profile</Button></Box>
+                    <Box><Button onClick={() => setCurrentPage('Settings')}>Settings</Button></Box>
                 </div>
             </span>
             <div className='logoutContainer'>
-                <Button onClick={() => {/* logout */}}>Log out</Button>
+                <div><Button onClick={() => {/* logout */}}>Icon: Log out</Button></div>
             </div>
         </div>
     );
