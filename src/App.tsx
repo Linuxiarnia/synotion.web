@@ -3,6 +3,7 @@ import { AppContent } from './AppContent';
 import { Button, CssBaseline, ThemeProvider, 
     useMediaQuery } from '@mui/material';
 import { buildTheme } from '@theme/theme';
+import { NavBar } from '@components/Navigation';
 
 //random bullshit change lmao
 const App: React.FC = () => {
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <AppContent />
+            <NavBar></NavBar>
             <Button onClick={() => setMode(prev => !prev)}>
                 ToggleTheme
             </Button>
