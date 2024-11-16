@@ -5,31 +5,40 @@ import React, { createContext, useContext, useState, PropsWithChildren } from 'r
 interface ThemeContextProps {
     mode: boolean,
     theme?: Theme,
-    toggleTheme: () => void;
+    toggleTheme: () => void,
+    jwtoken: string | null,
+    overWriteToken: (input: string) => void
 }
 
-const ThemeContext = createContext<ThemeContextProps>({ mode: true, toggleTheme(){} });
+const ThemeContext = createContext<ThemeContextProps>({
+    mode: true, toggleTheme(){}, jwtoken: null, overWriteToken(){} 
+});
 
 const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
     //use store to change the true to stored value asap
     const [mode, setTheme] = useState<boolean>(true);
+    const [jwtoken, setJwtoken] = useState<string | null>(null);
     const theme = buildTheme(mode);
 
     const toggleTheme = () => {
         setTheme((prevTheme) => (!prevTheme));
     };
 
+    const overWriteToken = (input: string) => {
+        setJwtoken(input);
+    };
+
     return (
         <ThemeContext.Provider value={{
-            mode, theme, toggleTheme 
+            mode, theme, toggleTheme, jwtoken, overWriteToken
         }}>
             {children}
         </ThemeContext.Provider>
     );
 };
 
-const useTheme = () => {
+const useProvider = () => {
     return useContext(ThemeContext);
 };
 
-export { ThemeProvider, useTheme };
+export { ThemeProvider, useProvider };

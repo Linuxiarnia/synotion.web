@@ -1,14 +1,16 @@
 import { Button, Card, FormControlLabel, FormGroup, Grid2, Switch, TextField } from '@mui/material';
 import React from 'react';
-import { useTheme } from 'src/context/ThemeContext';
+import { useProvider } from 'src/context/ThemeContext';
 
 
 export const Settings = () => {
 
-    const { mode, toggleTheme } = useTheme();
+
+    const { mode, toggleTheme, jwtoken } = useProvider();
     const [currentPassword, setCurrentPassword] = React.useState('');
     const [newPassword, setNewPassword] = React.useState('');
     const [repeatNewPassword, setRepeatNewPassword] = React.useState('');
+
 
     return(
         <Grid2 container height={'100%'} justifyContent={'center'} marginTop={'10px'} padding={'10px'} width={'100%'}>
@@ -28,6 +30,7 @@ export const Settings = () => {
                     <Button onClick={() => console.log(currentPassword)} > Change </Button>
                 </FormGroup>
             </Card>
+            <div>{jwtoken === null? 'null' : jwtoken}</div>
         </Grid2>
     );
 };
