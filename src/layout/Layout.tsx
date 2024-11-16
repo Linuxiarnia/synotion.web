@@ -8,7 +8,7 @@ export const Layout: React.FC<PropsWithChildren> = ({ children }) => {
     return <>
         <Stack direction={isMdDown ? 'column' : 'row-reverse'} height={'100vh'} spacing={2} sx={{ overflow: 'hidden' }}>
             <Box sx={{
-                width: '100%', height: '100%', maxHeight: '90vh', overflowY: 'scroll' 
+                width: '100%', height: '100%', overflowY: 'scroll' 
             }}>
                 {children}
             </Box>
