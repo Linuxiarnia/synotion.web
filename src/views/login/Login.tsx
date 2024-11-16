@@ -5,7 +5,9 @@ import { useProvider } from '@providers/ThemeContext';
 export const Login = () => {
 
     const theme = useTheme();
-    const { userLogin, overWriteLogin, jwtoken, overWriteToken } = useProvider();
+    const {
+        userLogin, overWriteLogin, jwtoken, overWriteToken, changeLogin 
+    } = useProvider();
     
     const [login, setLogin] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -15,6 +17,7 @@ export const Login = () => {
         //call the api
 
         overWriteToken(result); //token stored as jwtoken 
+        changeLogin(result);
     };
 
     return(

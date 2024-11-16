@@ -2,7 +2,7 @@ import { Theme } from '@mui/material';
 import { buildTheme } from '@theme/theme';
 import React, { createContext, useContext, useState, PropsWithChildren } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, toggleTheme as toggleSystemTheme, changeToken as changeUserToken } from 'src/store/store';
+import { RootState, toggleTheme as toggleSystemTheme, changeToken as changeUserToken, changeLogin as changeUserLogin } from 'src/store/store';
 
 interface ThemeContextProps {
     mode: boolean,
@@ -10,11 +10,12 @@ interface ThemeContextProps {
     toggleTheme: () => void,
     jwtoken: string | null,
     overWriteToken: (input: string) => void,
-    login: string | null
+    login: string | null,
+    changeLogin: (input: string) => void
 }
 
 const ThemeContext = createContext<ThemeContextProps>({
-    mode: true, toggleTheme(){}, jwtoken: null, overWriteToken(){}, login: null
+    mode: true, toggleTheme(){}, jwtoken: null, overWriteToken(){}, login: null, changeLogin(){}
 });
 
 const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
@@ -32,13 +33,16 @@ const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
     };
 
     const overWriteToken = (input: string) => {
-        
         dispatch(changeUserToken(input));
+    };
+
+    const changeLogin = (input: string) => {
+        dispatch(changeUserLogin(input));
     };
 
     return (
         <ThemeContext.Provider value={{
-            mode: themeMode === 'dark', theme, toggleTheme, jwtoken: userToken, overWriteToken, login: userLogin
+            mode: themeMode === 'dark', theme, toggleTheme, jwtoken: userToken, overWriteToken, login: userLogin, changeLogin
         }}>
             {children}
         </ThemeContext.Provider>

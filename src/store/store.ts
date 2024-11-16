@@ -37,7 +37,7 @@ const loginAction = loginSlice.actions;
 
 export const { toggleTheme } = settingsSlice.actions;
 
-export const  { changeToken } = loginSlice.actions;
+export const  { changeToken, changeLogin } = loginSlice.actions;
 
 export const store = configureStore({ reducer: { settings: settingsSlice.reducer, login: loginSlice.reducer }});
 export type RootState = ReturnType<typeof store.getState>;
