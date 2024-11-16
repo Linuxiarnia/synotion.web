@@ -12,10 +12,10 @@ const App: React.FC = () => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <AppContent />
             <Button onClick={() => setMode(prev => !prev)}>
                 ToggleTheme
             </Button>
+            <AppContent />
         </ThemeProvider>
     );
 };
