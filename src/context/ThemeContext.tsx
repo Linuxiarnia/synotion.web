@@ -11,6 +11,7 @@ interface ThemeContextProps {
 const ThemeContext = createContext<ThemeContextProps>({ mode: true, toggleTheme(){} });
 
 const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
+    //use store to change the true to stored value asap
     const [mode, setTheme] = useState<boolean>(true);
     const theme = buildTheme(mode);
 

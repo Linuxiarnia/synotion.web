@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AppContent } from './AppContent';
-import { Button, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './layout/Layout';
 import { Profile } from '@views/profile/profile';
 import { Leaderboards } from '@views/leaderboards/leaderboards';
 import { Settings } from '@views/settings/settings';
 import { useTheme } from './context/ThemeContext';
+import { Login } from './login/Login';
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     {
         path: '/settings',
         element: <Settings/>
+    },
+    {
+        path: '/login',
+        element: <Login/>
     }
 ]);
 
@@ -32,6 +37,8 @@ const App: React.FC = () => {
     // const location = useLocation();
     const { theme, toggleTheme } = useTheme();
     const defaultTheme = createTheme();
+
+    const [jwtoken, setJwtoken] = useState<string | null>(null);
 
     return (
         <ThemeProvider theme={theme || defaultTheme}>
