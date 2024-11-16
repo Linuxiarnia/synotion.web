@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AppContent } from './AppContent';
-import { Button, CssBaseline, ThemeProvider, 
-    useMediaQuery } from '@mui/material';
-import { buildTheme } from '@theme/theme';
+import { Button, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './layout/Layout';
 import { Profile } from '@views/profile/profile';
 import { Leaderboards } from '@views/leaderboards/leaderboards';
 import { Settings } from '@views/settings/settings';
+import { useTheme } from './context/ThemeContext';
 
 
 const router = createBrowserRouter([
@@ -31,17 +30,16 @@ const router = createBrowserRouter([
 
 const App: React.FC = () => {
     // const location = useLocation();
-    const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-    const [mode, setMode] = useState<boolean>(isDarkMode);
-    const theme = buildTheme(mode);
+    const { theme, toggleTheme } = useTheme();
+    const defaultTheme = createTheme();
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme || defaultTheme}>
             <CssBaseline />
             <AppContent />
             <Layout>
                 <RouterProvider router={router}></RouterProvider>
-                <Button onClick={() => setMode(prev => !prev)}>
+                <Button onClick={() => toggleTheme}>
                     ToggleTheme
                 </Button>
             </Layout>

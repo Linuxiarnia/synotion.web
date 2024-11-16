@@ -4,12 +4,12 @@ import { useTheme } from 'src/context/ThemeContext';
 
 export const Settings = () => {
 
-    const { theme, toggleTheme } = useTheme();
+    const { mode, toggleTheme } = useTheme();
 
     return(
         <>
             <h2>Themed Component</h2>
-            <p>Current Theme: {theme}</p>
+            <p>Current Theme: {`${mode}`}</p>
             <button onClick={toggleTheme}>Toggle Theme</button>
         </>
     );
