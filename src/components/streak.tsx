@@ -4,16 +4,16 @@ import WhatshotIcon from '@mui/icons-material/Whatshot';
 import { Box } from '@mui/system';
 
 interface StreakProps {
-    message: string;
+    streak: number;
 }
 
-export const Streak = ({ message }: StreakProps) => {
+export const Streak = ({ streak }: StreakProps) => {
     const theme = useTheme();
     return (
         <Box fontStyle={{ textAlign: 'center' }}>
-            <WhatshotIcon style={{ fontSize:'20rem', color: theme.palette.primary.light }}/>
+            <WhatshotIcon style={{ fontSize:'20rem', color: theme.palette.primary.main }}/>
             <br/>
-            { message }
+            { streak } days streak
         </Box>
     );
 };
