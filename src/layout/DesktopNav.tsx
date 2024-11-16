@@ -21,10 +21,11 @@ export const DesktopNav: React.FC = () => {
                     </Typography>
                 </Box>  
                 <Stack>
-                    <Box><MyButton LinkComponent={Link} href='/game'>Icon: Play</MyButton></Box>
+                    <Box><MyButton LinkComponent={Link} href= '/game'>Icon: Play</MyButton></Box>
                     <Box><MyButton LinkComponent={Link} href = '/leaderboards'>Leaderboards</MyButton></Box>
                     <Box><MyButton LinkComponent={Link} href = '/profile'>Profile</MyButton></Box>
                     <Box><MyButton LinkComponent={Link} href = '/settings'>Settings</MyButton></Box>
+                    <Box><MyButton LinkComponent={Link} href = '/gallery'>User Gallery</MyButton></Box>
                 </Stack>
             </Box>
             <div>

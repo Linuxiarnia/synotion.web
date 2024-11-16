@@ -15,8 +15,8 @@ export const MobileNav: React.FC = () => {
         }
     };
     return <Stack bgcolor={theme.palette.background.paper} bottom='0' direction={'row'} justifyContent={'space-between'} position={'sticky'} px={4} py={2} width={'100%'} zIndex={4}>
-        <IconButton LinkComponent={Link} href='/galery'>
-            <BrowseGallery sx={{ color: generateFill('/profile') }}  />
+        <IconButton LinkComponent={Link} href='/gallery'>
+            <BrowseGallery sx={{ color: generateFill('/gallery') }}  />
         </IconButton>
         <IconButton LinkComponent={Link} href='/profile'>
             <Person sx={{ color: generateFill('/profile') }}/>
