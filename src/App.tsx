@@ -10,6 +10,7 @@ import { Login } from './views/login/Login';
 import { Game } from '@views/game/Game';
 import { Gallery } from '@views/gallery/gallery';
 import { Upload } from '@views/upload/upload';
+import { Register } from '@views/register/Register';
 
 const App: React.FC = () => {
     // const location = useLocation();
@@ -30,6 +31,7 @@ const App: React.FC = () => {
                         <Route element={<Game />} path='/game' />
                         <Route element={<Login />} path='/login' />
                         <Route element={<Upload />} path='/upload' />
+                        <Route element={<Register/>} path='/register'/>
                     </Routes>
                 </Layout>
             </BrowserRouter>

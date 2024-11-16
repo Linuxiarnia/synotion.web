@@ -3,11 +3,12 @@ import React from 'react';
 import { useProvider } from '@providers/ThemeContext';
 import i18n from 'src/i18n';
 import { reloadResources } from 'i18next';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 
 export const Settings = () => {
 
+    const { t } = useTranslation();
     const { mode, toggleTheme, jwtoken, overWriteToken } = useProvider();
     const [currentPassword, setCurrentPassword] = React.useState('');
     const [newPassword, setNewPassword] = React.useState('');
@@ -22,7 +23,7 @@ export const Settings = () => {
         <Grid2 container height={'100%'} justifyContent={'center'} marginTop={'10px'} padding={'10px'} width={'100%'}>
             <Grid2 size={12}>
                 <Card sx={{ width: '100%', height: '100%' }}>
-                    <Stack gap={'1rem'} alignItems={'center'}>
+                    <Stack alignItems={'center'} gap={'1rem'}>
                         <FormGroup aria-label='position'sx={{ marginLeft: '1rem' }}>
                             <FormControlLabel
                                 control={<Switch defaultChecked color='primary' onChange={toggleTheme} />}
@@ -30,7 +31,7 @@ export const Settings = () => {
                                 labelPlacement='start'
                                 value='meow'
                             />
-                            <Select label="Language" onChange={(e) => handleLanguageChange(e.target.value)}  value={i18n.language}>
+                            <Select label='Language' value={i18n.language}  onChange={(e) => handleLanguageChange(e.target.value)}>
                                 <MenuItem value={'pl'}>Polski</MenuItem>
                                 <MenuItem value={'en'}>English</MenuItem>
                             </Select>
