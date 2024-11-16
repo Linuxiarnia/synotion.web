@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Alert, AlertTitle, Box, Button, Typography } from '@mui/material';
 import React from 'react';
 import { useGameProvider } from '@hooks/useGameProvider';
 import { ErrorModal } from '@components/ErrorModal';
@@ -17,7 +17,17 @@ export const DisplayedMedium: React.FC = () => {
         <Box sx={() => ({
             borderRadius: 5, width: 'fit-content', overflow: 'hidden' 
         })}>
-            <Box alt='image didnt load' component={'img'} maxWidth={'350px'} src={currentMedia?.image} width={'100%'} />
+            {
+                currentMedia === undefined
+                    ? <Alert sx={{ height: '100%', minHeight: '200px' }} variant='filled'>
+                        <AlertTitle>{'media.couldntLoad'}</AlertTitle>
+                        <Typography>{'media.somethingWentWrong'}</Typography>
+                        <Button variant='contained'>
+                            reload
+                        </Button>
+                    </Alert>
+                    : <Box alt='image didnt load' component={'img'} maxWidth={'350px'} src={currentMedia?.image} width={'100%'} />
+            }
         </Box>
     </>;
 };

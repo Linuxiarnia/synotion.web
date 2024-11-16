@@ -1,6 +1,6 @@
 import { Button, Card, Stack, TextField, useTheme } from '@mui/material';
 import React, { useState } from 'react';
-import { useProvider } from 'src/context/ThemeContext';
+import { useProvider } from '@providers/ThemeContext';
 
 export const Login = () => {
 

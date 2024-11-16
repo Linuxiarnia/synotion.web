@@ -13,9 +13,9 @@ export interface GraphProps {
     data: dataType[];
 }
 
-export const Graph = ({ data }: GraphProps) => {
-    
+export const Graph: React.FC<GraphProps> = ({ data }) => {
     const theme = useTheme();
+
     return (
         <Card>
             <Box style={{

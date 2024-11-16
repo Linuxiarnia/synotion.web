@@ -1,6 +1,8 @@
 import { Theme } from '@mui/material';
 import { buildTheme } from '@theme/theme';
 import React, { createContext, useContext, useState, PropsWithChildren } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState, toggleTheme as toggleSystemTheme } from 'src/store/store';
 
 interface ThemeContextProps {
     mode: boolean,
@@ -16,12 +18,13 @@ const ThemeContext = createContext<ThemeContextProps>({
 
 const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
     //use store to change the true to stored value asap
-    const [mode, setTheme] = useState<boolean>(true);
+    const themeMode = useSelector((state: RootState) => state.mode);
+    const dispatch = useDispatch();
     const [jwtoken, setJwtoken] = useState<string | null>(null);
-    const theme = buildTheme(mode);
+    const theme = buildTheme(themeMode === 'dark');
 
     const toggleTheme = () => {
-        setTheme((prevTheme) => (!prevTheme));
+        dispatch(toggleSystemTheme(themeMode === 'light' ? 'dark' : 'light'));
     };
 
     const overWriteToken = (input: string) => {
@@ -30,7 +33,7 @@ const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
     return (
         <ThemeContext.Provider value={{
-            mode, theme, toggleTheme, jwtoken, overWriteToken
+            mode: themeMode === 'dark', theme, toggleTheme, jwtoken, overWriteToken
         }}>
             {children}
         </ThemeContext.Provider>
