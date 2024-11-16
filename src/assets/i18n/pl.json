@@ -1,1 +1,25 @@
-{"controls":{"anger":"Wściekłość","disgust":"Obrzydzenie","fear":"Strach","happy":"Radość","sad":"Smutek","surprise":"Zaskoczenie"}}
+{
+  "control": {
+    "report_media": "Zgłoś obraz"
+  },
+  "controls": {
+    "anger": "Wściekłość",
+    "disgust": "Obrzydzenie",
+    "fear": "Strach",
+    "happy": "Radość",
+    "next": "Następny",
+    "noEmotionsSelected": "Nie wybrano żadnych emocji",
+    "quit": "Wyjdź",
+    "sad": "Smutek",
+    "surprise": "Zaskoczenie"
+  },
+  "error": {
+    "modalAccept": "Kontynułuj",
+    "modalCancel": "Przerwij",
+    "modalUnderstand": "mam problem z tym zdjęciem >:3"
+  },
+  "media": {
+    "couldntLoad": "Obraz nie mógł się załadować :(",
+    "somethingWentWrong": "Coś poszło nie tak!"
+  }
+}

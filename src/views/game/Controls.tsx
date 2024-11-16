@@ -69,7 +69,7 @@ export const Controls: React.FC = () => {
 
     const updateMessage = () => {
         if (selectedControls.size === 0) {
-            setCurrentMessage('controls.noEmotionsSelected');
+            setCurrentMessage(t('controls.noEmotionsSelected'));
             return;
         }
         setCurrentMessage(undefined);
@@ -87,7 +87,7 @@ export const Controls: React.FC = () => {
         </Grid2>
         <Grid2 size={6} textAlign={'right'}>
             <Button color='error' variant={'outlined'} onClick={toggleReport}>
-                report media
+                {t('control.report_media')}
             </Button>
         </Grid2>
         {emotions.map((emotion, index) => {
@@ -106,11 +106,11 @@ export const Controls: React.FC = () => {
                 {currentMessage !== undefined 
                     ? <Notification message={currentMessage} />
                     : <Button fullWidth color='success' variant='contained' onClick={handleNext}>
-                        {'controls.next'}
+                        {t('controls.next')}
                     </Button>
                 }
                 <Button fullWidth color='info' variant='outlined' onClick={handleQuit}>
-                    {'controls.quit'}
+                    {t('controls.quit')}
                 </Button>
             </Stack>
         </Grid2>

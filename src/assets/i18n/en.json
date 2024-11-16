@@ -1,1 +1,25 @@
-{"controls":{"anger":"Anger","disgust":"Disgust","fear":"Fear","happy":"Happiness","sad":"Sadness","surprise":"Surprise"}}
+{
+  "control": {
+    "report_media": "Report media"
+  },
+  "controls": {
+    "anger": "Anger",
+    "disgust": "Disgust",
+    "fear": "Fear",
+    "happy": "Happiness",
+    "next": "Next",
+    "noEmotionsSelected": "No emotion selected",
+    "quit": "Quit",
+    "sad": "Sadness",
+    "surprise": "Surprise"
+  },
+  "error": {
+    "modalAccept": "Continue",
+    "modalCancel": "Cancel",
+    "modalUnderstand": "I have a problem with this image >:3"
+  },
+  "media": {
+    "couldntLoad": "Media couldn't load :(",
+    "somethingWentWrong": "Something went wrong!"
+  }
+}

@@ -1,4 +1,5 @@
 import { Button, Checkbox, FormControl, Modal, Stack, Typography } from '@mui/material';
+import { t } from 'i18next';
 import React, { useState } from 'react';
 
 interface ModalProps {
@@ -38,16 +39,16 @@ export const ErrorModal: React.FC<ModalProps> = ({
                 <Stack alignItems={'center'} direction='row'>
                     <Button color={'inherit'} onClick={() => setIsChecked(prev => !prev)}>
                         <Checkbox checked={isChecked} name={'errorCheck'} />
-                        {'error.modalUnderstand'}
+                        {t('error.modalUnderstand')}
                     </Button>
                 </Stack>
             </FormControl>
             <Stack direction='row' gap={2} width={'100%'}>
                 <Button fullWidth variant='outlined' onClick={handleClose}>
-                    {'error.modalCancel'}
+                    {t('error.modalCancel')}
                 </Button>
                 <Button fullWidth disabled={!isChecked} variant='contained' onClick={handleAccept}>
-                    {'error.modalAccept'}
+                    {t('error.modalAccept')}
                 </Button>
             </Stack>
         </Stack>
