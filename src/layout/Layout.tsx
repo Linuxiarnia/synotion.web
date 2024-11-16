@@ -1,15 +1,19 @@
 import { NavBar } from '@components/Navigation';
-import { Box, Stack } from '@mui/material';
+import { Box, Grid2 } from '@mui/material';
 import React, { PropsWithChildren } from 'react';
 
 export const Layout: React.FC<PropsWithChildren> = ({ children }) => {
     return<>
-        <Stack direction='row' spacing={2}>
-            <NavBar />
-            <Box sx={{ width: '100%' }}>
-                {children}
-            </Box>
-        </Stack>
+        <Grid2 container columns={16} spacing={2}>
+            <Grid2 size={3} sx={{ display: 'block' }}>
+                <NavBar />
+            </Grid2>
+            <Grid2 size={13} sx={{ display: 'block' }}>
+                <Box>
+                    {children}
+                </Box>
+            </Grid2>
+        </Grid2>
         
     </>;
 };

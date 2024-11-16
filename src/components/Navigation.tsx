@@ -1,8 +1,7 @@
-import { Box, Button, ButtonProps, Theme, Typography, useTheme } from '@mui/material';
+import { Box, Button, ButtonProps, Stack, Theme, Typography, useTheme } from '@mui/material';
 import React from 'react';
 
 
-import './Navigation.css';
 import styled from '@emotion/styled';
 
 //myButton zwraca blad, ale dziala lol
@@ -16,8 +15,9 @@ export const NavBar = () => {
     console.log(location);
 
     return(
-        <Box className='navigation' sx={{
-            borderRightColor: theme.palette.primary.main, borderWidth: '3px', borderRightStyle: 'solid' 
+        <Stack sx={{
+            
+            borderRightColor: theme.palette.primary.main, borderWidth: '3px', borderRightStyle: 'solid' , height: '100%'
         }}>
 
             <span>
@@ -27,7 +27,7 @@ export const NavBar = () => {
                     </Typography>
                 </Box>  
                 <div className='navContainer'>
-                    <Box><MyButton href='/'>Icon: Play</MyButton></Box>
+                    <Box><MyButton href='/game'>Icon: Play</MyButton></Box>
                     <Box><MyButton href = '/leaderboards'>Leaderboards</MyButton></Box>
                     <Box><MyButton href = '/profile'>Profile</MyButton></Box>
                     <Box><MyButton href = '/settings'>Settings</MyButton></Box>
@@ -36,6 +36,6 @@ export const NavBar = () => {
             <div className='logoutContainer'>
                 <div><MyButton onClick={() => {/* logout */}}>Icon: Log out</MyButton></div>
             </div>
-        </Box>
+        </Stack>
     );
 };

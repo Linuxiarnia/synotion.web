@@ -46,12 +46,9 @@ const App: React.FC = () => {
     return (
         <ThemeProvider theme={theme || defaultTheme}>
             <CssBaseline />
-            <AppContent />
+            {/* <AppContent /> */}
             <Layout>
                 <RouterProvider router={router}></RouterProvider>
-                {/* <Button onClick={() => toggleTheme}>
-                    ToggleTheme
-                </Button> */}
             </Layout>
         </ThemeProvider>
     );
