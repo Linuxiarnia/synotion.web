@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Card } from '@mui/material';
 import React from 'react';
 
 export interface summaryElemnts {
@@ -12,9 +12,9 @@ export interface SummaryProps {
 
 export const Summary = ({ summary }: SummaryProps) => {
     return (
-        <Box style={{ width:'100%'/*tutaj szerokość summary do edycji :) */ }}>
-            <h1>Summary</h1>
-            <table style={{ width:'100%' }}>
+        <Card style={{ padding: '10px' }} sx={{ height: '100%' }}>
+            <center><h1>Summary</h1></center>
+            <table style={{ width:'80%', margin: 'auto' }}>
                 {summary.map((element, index) => {
                     return (
                         <tr key={index} >
@@ -25,6 +25,6 @@ export const Summary = ({ summary }: SummaryProps) => {
                     );
                 })}
             </table>
-        </Box>
+        </Card>
     );
 };

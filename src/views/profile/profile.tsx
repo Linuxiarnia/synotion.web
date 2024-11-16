@@ -35,6 +35,13 @@ export const Profile = () => {
 
     let graphData: dataType[] = [graphDataTable];
 
+    const summaryElements: summaryElemnts = {
+        n: 'amo',
+        v: 123
+    };
+
+    const summaryTable: summaryElemnts[] = [summaryElements];
+
     const getProfileData = () => {
         //call API with data for components  
         
@@ -65,10 +72,16 @@ export const Profile = () => {
     return(
         <div>
             <UserElement img={userElement.img} message={userElement.message} name={userElement.name}></UserElement>
-            <Grid2 container spacing={2}>
-                <Graph data={graphData}></Graph>
-                <Summary summary={[]}></Summary>
-                <Streak streak={streakData.streak}></Streak>
+            <Grid2 container spacing={2} sx={{ padding: '10px' }}>
+                <Grid2 size = {12}>
+                    <Graph data={graphData}></Graph>
+                </Grid2>
+                <Grid2 size = {6}>
+                    <Summary summary={summaryTable}></Summary>
+                </Grid2>
+                <Grid2 size = {6}>
+                    <Streak streak={streakData.streak}></Streak>
+                </Grid2>
             </Grid2>
         </div>
     );
