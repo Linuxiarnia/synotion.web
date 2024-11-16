@@ -8,7 +8,7 @@ export const Login = () => {
     const theme = useTheme();
     const { jwtoken, overWriteToken } = useProvider();
     
-    const [login, setLogin] = useState<string>('');
+    const [name, setName] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [email, setEmail] = useState<string>('');
 
@@ -29,10 +29,10 @@ export const Login = () => {
                     width: '90%', padding: '10px', marginLeft: 'auto', marginRight: 'auto' 
                 }}
                 onChange={(e) => setEmail(e.target.value)}></TextField> 
-                <TextField required id='login' label='Login' sx={{
+                <TextField required id='name' label='name' sx={{
                     width: '90%', padding: '10px', marginLeft: 'auto', marginRight: 'auto' 
                 }}
-                onChange={(e) => setLogin(e.target.value)}></TextField>
+                onChange={(e) => setName(e.target.value)}></TextField>
                 <TextField required id='password' label='Password' type='password' sx={{
                     width: '90%', padding: '10px', marginLeft: 'auto', marginRight: 'auto' 
                 }}
@@ -40,7 +40,7 @@ export const Login = () => {
                 <Button sx={{
                     width: '90%', padding: '10px', marginLeft: 'auto', marginRight: 'auto', border: '1px solid', borderColor: theme.palette.primary.main
                 }}
-                onClick={() => sendRegister(login,email, password)}>Register</Button>
+                onClick={() => sendRegister(name,email, password)}>Register</Button>
             </Stack>
         </Card>);
 };
