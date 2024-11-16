@@ -4,6 +4,10 @@ import { useProvider } from '@providers/ThemeContext';
 
 export const Login = () => {
 
+    type loginResponse = {
+        token: string;
+    };
+
     const theme = useTheme();
     const {
         userLogin, overWriteLogin, jwtoken, overWriteToken, changeLogin 
@@ -12,12 +16,45 @@ export const Login = () => {
     const [login, setLogin] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
-    const sendLogin = (login: string, password: string) => {
-        const result: string = login + password; //temp;
+    const sendLogin = async (login: string, password: string) => {
+        // const result: string = login + password; //temp;
         //call the api
+        try {
+            // 👇️ const response: Response
+            const response = await fetch('http://localhost:8080', {
+                method: 'POST',
+                body: JSON.stringify({
+                    username: login,
+                    password: password,
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+            });
+        
+            if (!response.ok) {
+                throw new Error(`Error! status: ${response.status}`);
+            }
+        
+            const result = (await response.json()) as loginResponse;
+        
+            console.log('result is: ', JSON.stringify(result, null, 4));
+            //update data
+            overWriteToken(result.token); //token stored as jwtoken 
+            changeLogin(login);
 
-        overWriteToken(result); //token stored as jwtoken 
-        changeLogin(result);
+        
+            return result;
+        } catch (error) {
+            if (error instanceof Error) {
+                console.log('error message: ', error.message);
+                return error.message;
+            } else {
+                console.log('unexpected error: ', error);
+                return 'An unexpected error occurred';
+            }
+        }
     };
 
     return(
