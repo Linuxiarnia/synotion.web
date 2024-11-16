@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { AppContent } from './AppContent';
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './layout/Layout';
@@ -7,14 +6,14 @@ import { Profile } from '@views/profile/profile';
 import { Leaderboards } from '@views/leaderboards/leaderboards';
 import { Settings } from '@views/settings/settings';
 import { useProvider } from './context/ThemeContext';
-import { Login } from './login/Login';
+import { Login } from './views/login/Login';
 import { Game } from '@views/game/Game';
 
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: null
+        element: <Profile />
     },
     {
         path: '/leaderboards',
@@ -46,7 +45,6 @@ const App: React.FC = () => {
     return (
         <ThemeProvider theme={theme || defaultTheme}>
             <CssBaseline />
-            <AppContent />
             <Layout>
                 <RouterProvider router={router}></RouterProvider>
                 {/* <Button onClick={() => toggleTheme}>

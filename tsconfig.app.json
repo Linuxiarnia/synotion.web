@@ -24,6 +24,7 @@
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
+      "@layout/*": ["src/layout/*"],
       "@views/*": ["src/views/*"],
       "@models/*": ["src/models/*"],
       "@providers/*": ["src/providers/*"],
