@@ -1,4 +1,4 @@
-import { Box, Card } from '@mui/material';
+import { Card } from '@mui/material';
 import React from 'react';
 
 export interface summaryElemnts {
