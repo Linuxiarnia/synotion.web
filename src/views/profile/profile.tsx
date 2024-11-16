@@ -19,8 +19,8 @@ interface profileActivityData{
 export const Profile = () => {
     let userElement: UserElementProps = {
         img: 'data-from-api',
-        name: 'fucku',
-        message: 'lmaoe'
+        name: 'sdasd',
+        message: 'meow to meet u'
     };
 
     let streakData: StreakProps = { streak: 2137 };
@@ -47,8 +47,8 @@ export const Profile = () => {
         //get user element
         userElement = {
             img: 'data-from-api',
-            name: 'fucku',
-            message: 'lmaoe'
+            name: 'meow',
+            message: 'sadasdas'
         };
     
         //get all elements for summary
