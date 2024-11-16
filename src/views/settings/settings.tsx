@@ -28,7 +28,7 @@ export const Settings = () => {
                     <Button onClick={() => console.log(currentPassword)} > Change </Button>
                 </FormGroup>
             </Card>
-            <div>{jwtoken === null? 'null' : jwtoken}</div>
+            {/* <div>{jwtoken === null? 'null' : jwtoken}</div> */}
         </Grid2>
     );
 };
