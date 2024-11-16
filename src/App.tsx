@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './layout/Layout';
 import { Profile } from '@views/profile/profile';
 import { Leaderboards } from '@views/leaderboards/leaderboards';
+import { Settings } from '@views/settings/settings';
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
     {
         path: '/profile',
         element: <Profile/>
+    },
+    {
+        path: '/settings',
+        element: <Settings/>
     }
 ]);
 
