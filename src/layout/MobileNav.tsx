@@ -16,7 +16,7 @@ export const MobileNav: React.FC = () => {
         }
     };
     return <Stack bgcolor={theme.palette.background.paper} bottom='0' direction={'row'} justifyContent={'space-between'} p={4} position={'sticky'} width={'100%'} zIndex={4}>
-        <Link to='/galery'>
+        <Link to='/gallery'>
             <BrowseGallery sx={{ color: generateFill('/profile') }}  />
         </Link>
         <Link to='/profile' onClick={() => {console.log('navigate');}}>
