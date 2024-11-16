@@ -5,7 +5,7 @@ import { Layout } from './layout/Layout';
 import { Profile } from '@views/profile/profile';
 import { Leaderboards } from '@views/leaderboards/leaderboards';
 import { Settings } from '@views/settings/settings';
-import { useTheme } from './context/ThemeContext';
+import { useProvider } from './context/ThemeContext';
 import { Login } from './login/Login';
 import { Game } from '@views/game/Game';
 
@@ -39,10 +39,8 @@ const router = createBrowserRouter([
 
 const App: React.FC = () => {
     // const location = useLocation();
-    const { theme, toggleTheme } = useTheme();
+    const { theme, toggleTheme } = useProvider();
     const defaultTheme = createTheme();
-
-    const [jwtoken, setJwtoken] = useState<string | null>(null);
 
     return (
         <ThemeProvider theme={theme || defaultTheme}>
