@@ -2,7 +2,7 @@ import { Graph } from '@components/graph';
 import { Streak } from '@components/streak';
 import { Summary } from '@components/summary';
 import { UserElement } from '@components/userElement';
-import { Grid2 } from '@mui/material';
+import { Box, Grid2 } from '@mui/material';
 import React from 'react';
 
 import { UserElementProps } from '@components/userElement';
@@ -70,19 +70,19 @@ export const Profile = () => {
     };
 
     return(
-        <div>
+        <Box p={2}>
             <UserElement img={userElement.img} message={userElement.message} name={userElement.name}></UserElement>
             <Grid2 container spacing={2} sx={{ padding: '10px' }}>
-                <Grid2 size = {12}>
+                <Grid2 size={12}>
                     <Graph data={graphData}></Graph>
                 </Grid2>
-                <Grid2 size = {6}>
+                <Grid2 size={{ xs: 12, md:6 }}>
                     <Summary summary={summaryTable}></Summary>
                 </Grid2>
-                <Grid2 size = {6}>
+                <Grid2 size={{ xs: 12, md:6 }}>
                     <Streak streak={streakData.streak}></Streak>
                 </Grid2>
             </Grid2>
-        </div>
+        </Box>
     );
 };

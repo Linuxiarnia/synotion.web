@@ -1,4 +1,4 @@
-import { Box, Card, Divider, Grid2, useTheme } from '@mui/material';
+import { Box, Card, Divider, Grid2, Typography, useTheme } from '@mui/material';
 import React from 'react';
 
 interface playerEntry{
@@ -46,7 +46,7 @@ export const Leaderboards = () => {
         <Card sx={{
             padding: '10px', margin: '10px', height: '80%' 
         }}>
-            <center><h1>LEADERBOARD</h1></center>
+            <Typography>Leaderboards</Typography>
             <Grid2 container justifyContent={'center'} key = {'legend'} spacing={2} sx={{
                 width: '90%', margin: 'auto', textAlign: 'center' 
             }}>
@@ -113,8 +113,6 @@ export const Leaderboards = () => {
                         </Grid2>
                     </Grid2>
                 }
-
-
             </Grid2>
         </Card>
     );

@@ -6,14 +6,14 @@ import { Profile } from '@views/profile/profile';
 import { Leaderboards } from '@views/leaderboards/leaderboards';
 import { Settings } from '@views/settings/settings';
 import { useProvider } from './context/ThemeContext';
-import { Login } from './login/Login';
+import { Login } from './views/login/Login';
 import { Game } from '@views/game/Game';
 
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: null
+        element: <Profile />
     },
     {
         path: '/leaderboards',
