@@ -4,7 +4,7 @@ import React from 'react';
 
 export const GameCounter: React.FC = () => {
     const { selectedAmount } = useGameProvider();
-    return <Box>
-        <Typography>{'media.counter'}{selectedAmount}</Typography>
+    return <Box py={2}>
+        <Typography variant='h5'>{'media.counter'}{selectedAmount}</Typography>
     </Box>;
 };

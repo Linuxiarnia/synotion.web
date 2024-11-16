@@ -3,6 +3,8 @@ import { useGameProvider } from '@hooks/useGameProvider';
 import { Restore } from '@mui/icons-material';
 import { Button, Grid2, Stack, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const emotions = [
     'controls.happy',
@@ -26,9 +28,16 @@ type CardsPrios = 'error' | 'warning' | 'info' | 'secondary';
 
 export const Controls: React.FC = () => {
     const theme = useTheme();
+    const { t } = useTranslation();
     const { changeMedia, toggleReport } = useGameProvider();
     const [selectedControls, setSelectedControls] = useState<Set<string>>(new Set());
     const [currentMessage, setCurrentMessage] = useState<string>();
+
+    const navigate = useNavigate();
+
+    const handleQuit = () => {
+        navigate('/profile'); 
+    };
 
     const handleClick = (emotion: string) => {
         const newControls = new Set(selectedControls);
@@ -88,19 +97,19 @@ export const Controls: React.FC = () => {
                 xs: 12, md: 6, lg: 4 
             }}>
                 <Button fullWidth color={color} variant='contained' onClick={() => handleClick(emotion)}>
-                    {severity === -1 ? '' : `${severity + 1}. `}{emotion}
+                    {severity === -1 ? '' : `${severity + 1}. `}{t(emotion)}
                 </Button>
             </Grid2>; }
         )}
         <Grid2 size={12}>
-            <Stack direction={'row'} gap={2}  justifyContent={'center'} width={'100%'}>
+            <Stack direction={'row-reverse'} gap={2}  justifyContent={'center'} width={'100%'}>
                 {currentMessage !== undefined 
                     ? <Notification message={currentMessage} />
-                    : <Button color='success' variant='contained' onClick={handleNext}>
+                    : <Button fullWidth color='success' variant='contained' onClick={handleNext}>
                         {'controls.next'}
                     </Button>
                 }
-                <Button color='info' variant='outlined'>
+                <Button fullWidth color='info' variant='outlined' onClick={handleQuit}>
                     {'controls.quit'}
                 </Button>
             </Stack>
