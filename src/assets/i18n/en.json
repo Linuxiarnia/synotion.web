@@ -1,1 +1,45 @@
-{"controls":{"anger":"Anger","disgust":"Disgust","fear":"Fear","happy":"Happiness","sad":"Sadness","surprise":"Surprise"}}
+{
+  "Change": "Change",
+  "I_agree_to_TOS": "I agree to TOS",
+  "Leaderboards": "Leaderboards",
+  "Log_out": "Log out",
+  "New_password": "New password",
+  "Play": "Play",
+  "Profile": "Profile",
+  "Settings": "Ustawienia",
+  "Submit": "Submit",
+  "User_Gallery": "User Gallery",
+  "control": {
+    "report_media": "Report media"
+  },
+  "controls": {
+    "anger": "Anger",
+    "disgust": "Disgust",
+    "fear": "Fear",
+    "happy": "Happiness",
+    "next": "Next",
+    "noEmotionsSelected": "No emotion selected",
+    "quit": "Quit",
+    "sad": "Sadness",
+    "surprise": "Surprise"
+  },
+  "error": {
+    "modalAccept": "Continue",
+    "modalCancel": "Cancel",
+    "modalUnderstand": "I have a problem with this image >:3"
+  },
+  "level": "level",
+  "media": {
+    "couldntLoad": "Media couldn't load :(",
+    "counter": "image nr.",
+    "report": "Report  image",
+    "reportQuestion": "Are you sure you want to report this picture?",
+    "somethingWentWrong": "Something went wrong!"
+  },
+  "password": "password",
+  "points": "Points",
+  "reload": "Reload",
+  "repeat_new_password": "repeat new password",
+  "upload": "Upload",
+  "username": "Username"
+}

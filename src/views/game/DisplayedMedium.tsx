@@ -2,6 +2,7 @@ import { Alert, AlertTitle, Box, Button, Typography } from '@mui/material';
 import React from 'react';
 import { useGameProvider } from '@hooks/useGameProvider';
 import { ErrorModal } from '@components/ErrorModal';
+import { t } from 'i18next';
 
 // tutaj ma być wyświetlane medium, które aktualnie jest wyświetlane
 
@@ -13,17 +14,19 @@ export const DisplayedMedium: React.FC = () => {
     };
 
     return <>
-        <ErrorModal isOpen={isReportModalOpen} message={'media.reportQuestion'} title={'media.report'} onAccept={handleReportAccept} onClose={toggleReport}/>
+        <ErrorModal isOpen={isReportModalOpen} message={t('media.reportQuestion')} title={t('media.report')} onAccept={handleReportAccept} onClose={toggleReport}/>
         <Box sx={() => ({
             borderRadius: 5, width: 'fit-content', overflow: 'hidden' 
         })}>
             {
                 currentMedia === undefined
                     ? <Alert sx={{ height: '100%', minHeight: '200px' }} variant='filled'>
-                        <AlertTitle>{'media.couldntLoad'}</AlertTitle>
-                        <Typography>{'media.somethingWentWrong'}</Typography>
-                        <Button variant='contained'>
-                            reload
+                        <AlertTitle>{t('media.couldntLoad')}</AlertTitle>
+                        <Typography>{t('media.somethingWentWrong')}</Typography>
+                        <Button variant='contained' style={{
+                            marginTop:'20% ', display: 'block', margin: '0 0' 
+                        }}>
+                            {t('reload')}
                         </Button>
                     </Alert>
                     : <Box alt='image didnt load' component={'img'} maxWidth={'350px'} src={currentMedia?.image} width={'100%'} />
