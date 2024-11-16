@@ -19,12 +19,6 @@ const App: React.FC = () => {
     return (
         <ThemeProvider theme={theme || defaultTheme}>
             <CssBaseline />
-<<<<<<< HEAD
-            {/* <AppContent /> */}
-            <Layout>
-                <RouterProvider router={router}></RouterProvider>
-            </Layout>
-=======
             <BrowserRouter>
                 <Layout>
                     <Routes>
@@ -39,7 +33,6 @@ const App: React.FC = () => {
                     </Routes>
                 </Layout>
             </BrowserRouter>
->>>>>>> 9bdb4803bff20b5f53723bee6975ad3ea1d45eb9
         </ThemeProvider>
     );
 };
