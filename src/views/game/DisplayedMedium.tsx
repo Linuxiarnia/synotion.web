@@ -14,7 +14,7 @@ export const DisplayedMedium: React.FC = () => {
     };
 
     return <>
-        <ErrorModal isOpen={isReportModalOpen} message={'media.reportQuestion'} title={'media.report'} onAccept={handleReportAccept} onClose={toggleReport}/>
+        <ErrorModal isOpen={isReportModalOpen} message={t('media.reportQuestion')} title={t('media.report')} onAccept={handleReportAccept} onClose={toggleReport}/>
         <Box sx={() => ({
             borderRadius: 5, width: 'fit-content', overflow: 'hidden' 
         })}>
@@ -23,8 +23,10 @@ export const DisplayedMedium: React.FC = () => {
                     ? <Alert sx={{ height: '100%', minHeight: '200px' }} variant='filled'>
                         <AlertTitle>{t('media.couldntLoad')}</AlertTitle>
                         <Typography>{t('media.somethingWentWrong')}</Typography>
-                        <Button variant='contained'>
-                            reload
+                        <Button variant='contained' style={{
+                            marginTop:'20% ', display: 'block', margin: '0 0' 
+                        }}>
+                            {t('reload')}
                         </Button>
                     </Alert>
                     : <Box alt='image didnt load' component={'img'} maxWidth={'350px'} src={currentMedia?.image} width={'100%'} />
