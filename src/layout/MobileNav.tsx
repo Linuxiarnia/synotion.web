@@ -1,4 +1,4 @@
-import { BrowseGallery, Gamepad, Person, Settings } from '@mui/icons-material';
+import { BrowseGallery, FileUpload, Gamepad, Person, Settings } from '@mui/icons-material';
 import { IconButton, Link, Stack, useTheme } from '@mui/material';
 import React from 'react';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
@@ -29,6 +29,9 @@ export const MobileNav: React.FC = () => {
         </IconButton>
         <IconButton LinkComponent={Link} href='/settings'>
             <Settings sx={{ color: generateFill('/settings') }} /> 
+        </IconButton> 
+        <IconButton LinkComponent={Link} href='/upload'>
+            <FileUpload sx={{ color: generateFill('/upload') }} /> 
         </IconButton> 
     </Stack>;
 };
