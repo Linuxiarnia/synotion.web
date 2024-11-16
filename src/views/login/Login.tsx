@@ -1,9 +1,10 @@
 import { Button, Card, Stack, TextField, useTheme } from '@mui/material';
 import React, { useState } from 'react';
 import { useProvider } from '@providers/ThemeContext';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
-
+    const navigate = useNavigate();
     type loginResponse = {
         token: string;
     };
@@ -43,7 +44,7 @@ export const Login = () => {
             //update data
             overWriteToken(result.token); //token stored as jwtoken 
             changeLogin(login);
-
+            navigate('/');
         
             return result;
         } catch (error) {
