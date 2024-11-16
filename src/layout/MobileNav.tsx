@@ -30,5 +30,8 @@ export const MobileNav: React.FC = () => {
         <IconButton LinkComponent={Link} href='/settings'>
             <Settings sx={{ color: generateFill('/settings') }} /> 
         </IconButton> 
+        <IconButton LinkComponent={Link} href='/upload'>
+            <Settings sx={{ color: generateFill('/upload') }} /> 
+        </IconButton> 
     </Stack>;
 };

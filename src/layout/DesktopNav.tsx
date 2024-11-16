@@ -26,6 +26,7 @@ export const DesktopNav: React.FC = () => {
                     <Box><MyButton LinkComponent={Link} href = '/profile'>Profile</MyButton></Box>
                     <Box><MyButton LinkComponent={Link} href = '/settings'>Settings</MyButton></Box>
                     <Box><MyButton LinkComponent={Link} href = '/gallery'>User Gallery</MyButton></Box>
+                    <Box><MyButton LinkComponent={Link} href = '/upload'>upload</MyButton></Box>
                 </Stack>
             </Box>
             <div>
