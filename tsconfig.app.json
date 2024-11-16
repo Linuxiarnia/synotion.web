@@ -27,6 +27,7 @@
       "@views/*": ["src/views/*"],
       "@models/*": ["src/models/*"],
       "@providers/*": ["src/providers/*"],
+      "@services/*": ["src/services/*"],
       "@theme/*": ["src/theme/*"],
     }
   },

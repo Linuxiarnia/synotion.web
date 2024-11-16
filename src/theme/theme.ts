@@ -1,4 +1,4 @@
-import { createTheme, SxProps, Theme } from '@mui/material';
+import { createTheme, Theme } from '@mui/material';
 import { generatePalette } from './palette';
 import { componentOverrides } from '@theme/component-overrides';
 import { ThemeModes } from '@models/ThemeEnums';
@@ -6,7 +6,8 @@ import { typography } from '@theme/typography';
 import { useEffect, useState } from 'react';
 
 declare module '@mui/material' {
-    interface ThemeOptions {border: SxProps}
+    interface ThemeOptions {border: { borderRadius: number }}
+    interface Theme {border: { borderRadius: number }}
 }
 
 

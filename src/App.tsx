@@ -8,6 +8,7 @@ import { Leaderboards } from '@views/leaderboards/leaderboards';
 import { Settings } from '@views/settings/settings';
 import { useProvider } from './context/ThemeContext';
 import { Login } from './login/Login';
+import { Game } from '@views/game/Game';
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
     {
         path: '/login',
         element: <Login/>
+    },
+    {
+        path: '/game',
+        element: <Game />
     }
 ]);
 

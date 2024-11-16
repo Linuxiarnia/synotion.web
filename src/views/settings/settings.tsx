@@ -1,23 +1,33 @@
-import { Card, FormControlLabel, FormGroup, Grid2, Switch } from '@mui/material';
+import { Button, Card, FormControlLabel, FormGroup, Grid2, Switch, TextField } from '@mui/material';
 import React from 'react';
 import { useProvider } from 'src/context/ThemeContext';
 
 
 export const Settings = () => {
 
+
     const { mode, toggleTheme, jwtoken } = useProvider();
+    const [currentPassword, setCurrentPassword] = React.useState('');
+    const [newPassword, setNewPassword] = React.useState('');
+    const [repeatNewPassword, setRepeatNewPassword] = React.useState('');
 
 
     return(
         <Grid2 container height={'100%'} justifyContent={'center'} marginTop={'10px'} padding={'10px'} width={'100%'}>
             <Card sx={{ width: '80%', height: '80%' }}>
-                <FormGroup row aria-label='position'>
+                <FormGroup row aria-label='position'sx={{ marginLeft: '1rem' }}>
                     <FormControlLabel
                         control={<Switch defaultChecked color='primary' onChange={toggleTheme} />}
                         label='Dark Mode'
                         labelPlacement='start'
                         value='meow'
                     />
+                </FormGroup>
+                <FormGroup column aria-label='position' sx={{ width:'10rem', marginLeft: '1rem' }}>
+                    <TextField required label='Current password' type='password' value={currentPassword} variant='filled' onChange={(e) => setCurrentPassword(e.target.value)} />
+                    <TextField required label='New password' type='password' value={newPassword} variant='filled' onChange={(e) => setNewPassword(e.target.value)} />
+                    <TextField required label='repeat new password' type='password' value={repeatNewPassword} variant='filled' onChange={(e) => setRepeatNewPassword(e.target.value)} />
+                    <Button onClick={() => console.log(currentPassword)} > Change </Button>
                 </FormGroup>
             </Card>
             <div>{jwtoken === null? 'null' : jwtoken}</div>
