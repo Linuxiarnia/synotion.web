@@ -39,9 +39,9 @@ const App: React.FC = () => {
             <AppContent />
             <Layout>
                 <RouterProvider router={router}></RouterProvider>
-                <Button onClick={() => toggleTheme}>
+                {/* <Button onClick={() => toggleTheme}>
                     ToggleTheme
-                </Button>
+                </Button> */}
             </Layout>
         </ThemeProvider>
     );
