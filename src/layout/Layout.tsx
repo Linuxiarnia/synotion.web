@@ -1,19 +1,14 @@
-import { NavBar } from '@components/Navigation';
-import { Box, Grid2 } from '@mui/material';
+import { Navigation } from 'src/layout/Navigation';
+import { Box, Stack } from '@mui/material';
 import React, { PropsWithChildren } from 'react';
 
 export const Layout: React.FC<PropsWithChildren> = ({ children }) => {
-    return<>
-        <Grid2 container columns={13} spacing={2} sx={{ display:'fixed', height: '100%' }}>
-            <Grid2 size={2} sx={{ display: 'block' }}>
-                <NavBar />
-            </Grid2>
-            <Grid2 size={11} sx={{ display: 'block' }}>
-                <Box>
-                    {children}
-                </Box>
-            </Grid2>
-        </Grid2>
-        
+    return <>
+        <Stack direction='row' spacing={2} sx={{ overflowX: 'hidden' }}>
+            <Navigation />
+            <Box sx={{ width: '100%' }}>
+                {children}
+            </Box>
+        </Stack>
     </>;
 };

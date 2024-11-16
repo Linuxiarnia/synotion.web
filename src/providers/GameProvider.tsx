@@ -25,6 +25,7 @@ export const GameProvider: React.FC<PropsWithChildren> = ({ children }) => {
     const [currentMedia, setCurrentMedia] = useState<MediaPayload>(media[0]);
     const [amountCount, setAmountCount] = useState<number>(0);
     const [isReportModalOpen, setIsReportModalOpen] = useState<boolean>(false);
+    const [isRunning, setIsRunning] = useState<boolean>(false);
 
     const addMedia = (newMedia: Media) => {
         const newSummary = summary;
@@ -34,9 +35,7 @@ export const GameProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
     const changeMedia = () => {
         const newMedia = Array.from(loadedMedia);
-        console.log(newMedia);
         const removed = newMedia.shift();
-        console.log('newMedia', newMedia, removed);
         setAmountCount(prev => prev++);
         setCurrentMedia(newMedia[0]);
         setLoadedMedia(newMedia);
@@ -44,9 +43,11 @@ export const GameProvider: React.FC<PropsWithChildren> = ({ children }) => {
     };
 
     const start = () => {
-        refresh();
-        setCurrentMedia(media[0]);
-        setLoadedMedia(media);
+        refresh().then(() => {
+            setCurrentMedia(media[0]);
+            setLoadedMedia(media);
+            setIsRunning(true);
+        });
     };
 
     const toggleReport = () => {
@@ -54,9 +55,11 @@ export const GameProvider: React.FC<PropsWithChildren> = ({ children }) => {
     };
 
     useEffect(() => {
-        start();
-        setCurrentMedia(media[0]);
-    }, []);
+        if (!isRunning && currentMedia === undefined) {
+            start();
+            setCurrentMedia(media[0]);
+        }
+    });
 
     return <GameContext.Provider value={{
         selectedAmount: amountCount, mediaScores: [], currentMedia, loading, isReportModalOpen, addMedia, changeMedia, start, toggleReport

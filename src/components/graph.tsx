@@ -19,7 +19,7 @@ export const Graph = ({ data }: GraphProps) => {
     return (
         <Card>
             <Box style={{
-                height: '20rem', width: '40rem', textAlign: 'center' 
+                height: '20rem', width: '100%', textAlign: 'center' 
             }}>
                 <ResponsiveContainer>
                     <BarChart data={data}>
