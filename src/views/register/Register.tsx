@@ -12,8 +12,8 @@ export const Login = () => {
     const [password, setPassword] = useState<string>('');
     const [email, setEmail] = useState<string>('');
 
-    const sendRegister = (login: string,email:string, password: string) => {
-        const result: string = login + email + password; //temp;
+    const sendRegister = (name: string,email:string, password: string) => {
+        const result: string = name + email + password; //temp;
         //call the api
 
 
