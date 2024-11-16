@@ -3,6 +3,7 @@ import Backend from 'i18next-http-backend';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 
 i18n
     .use(Backend)
@@ -30,5 +31,4 @@ i18n
         nonExplicitSupportedLngs: true,
         interpolation: { escapeValue: false }
     });
-
 export default i18n;

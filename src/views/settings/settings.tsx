@@ -1,6 +1,8 @@
 import { Button, Card, FormControlLabel, FormGroup, Grid2, Stack, Switch, TextField } from '@mui/material';
 import React from 'react';
 import { useProvider } from '@providers/ThemeContext';
+import toggleLanguage from 'i18next';
+import i18n from 'src/i18n';
 
 
 export const Settings = () => {
@@ -10,7 +12,11 @@ export const Settings = () => {
     const [currentPassword, setCurrentPassword] = React.useState('');
     const [newPassword, setNewPassword] = React.useState('');
     const [repeatNewPassword, setRepeatNewPassword] = React.useState('');
-
+    
+    const handleLanguageChange = () => {
+        const newLanguage = i18n.language === 'en' ? 'pl' : 'en';
+        i18n.changeLanguage(newLanguage);
+    };
 
     return(
         <Grid2 container height={'100%'} justifyContent={'center'} marginTop={'10px'} padding={'10px'} width={'100%'}>
@@ -23,6 +29,13 @@ export const Settings = () => {
                                 label='Dark Mode'
                                 labelPlacement='start'
                                 value='meow'
+                            />
+                        </FormGroup>
+                        <FormGroup aria-label='position'sx={{ marginLeft: '1rem' }}>
+                            <FormControlLabel
+                                control={<Switch defaultChecked onChange={(handleLanguageChange)} />}
+                                label='Change Language'
+                                labelPlacement='start'
                             />
                         </FormGroup>
                         <FormGroup aria-label='position' sx={{ width:'10rem', marginLeft: '1rem' }}>
