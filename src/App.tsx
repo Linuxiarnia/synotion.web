@@ -8,6 +8,7 @@ import { Settings } from '@views/settings/settings';
 import { useProvider } from './context/ThemeContext';
 import { Login } from './views/login/Login';
 import { Game } from '@views/game/Game';
+import { Gallery } from '@views/gallery/gallery';
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
     {
         path: '/game',
         element: <Game />
+    },
+    {
+        path: '/gallery',
+        element: <Gallery />
     }
 ]);
 
