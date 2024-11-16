@@ -36,7 +36,9 @@ export const GameProvider: React.FC<PropsWithChildren> = ({ children }) => {
     const changeMedia = () => {
         const newMedia = Array.from(loadedMedia);
         const removed = newMedia.shift();
-        setAmountCount(prev => prev++);
+        setAmountCount(prev => {
+            return ++prev;
+        });
         setCurrentMedia(newMedia[0]);
         setLoadedMedia(newMedia);
         

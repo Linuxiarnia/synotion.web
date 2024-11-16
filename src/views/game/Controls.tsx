@@ -93,16 +93,17 @@ export const Controls: React.FC = () => {
             </Grid2>; }
         )}
         <Grid2 size={12}>
-            {currentMessage !== undefined 
-                ? <Notification message={currentMessage} />
-                : <Stack direction={'row'} gap={2}  justifyContent={'center'}width={'100%'}>
-                    <Button color='info' variant='outlined'>
-                        {'controls.quit'}
-                    </Button>
-                    <Button color='success' variant='contained' onClick={handleNext}>
+            <Stack direction={'row'} gap={2}  justifyContent={'center'} width={'100%'}>
+                {currentMessage !== undefined 
+                    ? <Notification message={currentMessage} />
+                    : <Button color='success' variant='contained' onClick={handleNext}>
                         {'controls.next'}
                     </Button>
-                </Stack>}
+                }
+                <Button color='info' variant='outlined'>
+                    {'controls.quit'}
+                </Button>
+            </Stack>
         </Grid2>
     </Grid2>;
 };

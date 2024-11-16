@@ -10,25 +10,25 @@ export const DesktopNav: React.FC = () => {
     const theme = useTheme();
 
     return(
-        <Stack width={'100%'} sx={{
-            borderRightColor: theme.palette.primary.main, borderWidth: '3px', borderRightStyle: 'solid', maxWidth: '300px'
+        <Stack justifyContent={'space-between'} width={'100%'} sx={{
+            borderRightColor: theme.palette.primary.main, borderWidth: '3px', borderRightStyle: 'solid', maxWidth: '300px', height: '100vh'
         }}>
 
-            <span>
+            <Box>
                 <Box sx={{ bgcolor: 'none' , m: 2 }}>
                     <Typography color={theme.palette.primary.main} variant='body1'>
                         placeholderLogo
                     </Typography>
                 </Box>  
-                <Stack height={'100%'} minHeight={'1000px'}>
+                <Stack>
                     <Box><MyButton LinkComponent={Link} href='/game'>Icon: Play</MyButton></Box>
                     <Box><MyButton LinkComponent={Link} href = '/leaderboards'>Leaderboards</MyButton></Box>
                     <Box><MyButton LinkComponent={Link} href = '/profile'>Profile</MyButton></Box>
                     <Box><MyButton LinkComponent={Link} href = '/settings'>Settings</MyButton></Box>
                 </Stack>
-            </span>
-            <div className='logoutContainer'>
-                <div><MyButton onClick={() => {/* logout */}}>Icon: Log out</MyButton></div>
+            </Box>
+            <div>
+                <MyButton onClick={() => {/* logout */}}>Icon: Log out</MyButton>
             </div>
         </Stack>
     );
