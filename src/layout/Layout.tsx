@@ -4,7 +4,7 @@ import React, { PropsWithChildren } from 'react';
 
 export const Layout: React.FC<PropsWithChildren> = ({ children }) => {
     return<>
-        <Grid2 container columns={13} spacing={2}>
+        <Grid2 container columns={13} spacing={2} sx={{ display:'fixed', height: '100%' }}>
             <Grid2 size={2} sx={{ display: 'block' }}>
                 <NavBar />
             </Grid2>

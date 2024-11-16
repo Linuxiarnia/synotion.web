@@ -28,10 +28,10 @@ export const NavBar = () => {
             <Grid2 size = {9} sx={{
                 width: '80%', margin: 'auto', marginTop: '0px' 
             }}>
-                <Stack direction='row' spacing={2}><PlayArrow></PlayArrow><MyButton href='/game'>Play</MyButton></Stack>
-                <Stack direction='row' spacing={2}><Leaderboard></Leaderboard><MyButton href = '/leaderboards'>Leaderboards</MyButton></Stack>
-                <Stack direction='row' spacing={2}><Person></Person><MyButton href = '/profile'>Profile</MyButton></Stack>
-                <Stack direction='row' spacing={2}><Settings></Settings><MyButton href = '/settings'>Settings</MyButton></Stack>
+                <Stack direction='row' spacing={2}><PlayArrow color={('/game'==window.location.pathname)?'primary':'inherit'}></PlayArrow><MyButton href='/game'>Play</MyButton></Stack>
+                <Stack direction='row' spacing={2}><Leaderboard color={('/leaderboards'==window.location.pathname)?'primary':'inherit'}></Leaderboard><MyButton href = '/leaderboards'>Leaderboards</MyButton></Stack>
+                <Stack direction='row' spacing={2}><Person color={('/profile'==window.location.pathname)?'primary':'inherit'}></Person><MyButton href = '/profile'>Profile</MyButton></Stack>
+                <Stack direction='row' spacing={2}><Settings color={('/settings'==window.location.pathname)?'primary':'inherit'}></Settings><MyButton href = '/settings'>Settings</MyButton></Stack>
             </Grid2>
             <Grid2 size = {1} sx = {{
                 width: '80%', margin: 'auto', marginBottom: '10px' 
