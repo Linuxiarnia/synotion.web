@@ -3,6 +3,7 @@ import React from 'react';
 import { useProvider } from '@providers/ThemeContext';
 import i18n from 'src/i18n';
 import { reloadResources } from 'i18next';
+import { t } from 'i18next';
 
 
 export const Settings = () => {
@@ -36,10 +37,10 @@ export const Settings = () => {
                             </Select>
                         </FormGroup>
                         <FormGroup aria-label='position' sx={{ width:'15rem', marginLeft: '1rem' }}>
-                            <TextField required label='Current password' type='password' value={currentPassword} variant='filled' onChange={(e) => setCurrentPassword(e.target.value)} />
-                            <TextField required label='New password' type='password' value={newPassword} variant='filled' onChange={(e) => setNewPassword(e.target.value)} />
-                            <TextField required label='repeat new password' type='password' value={repeatNewPassword} variant='filled' onChange={(e) => setRepeatNewPassword(e.target.value)} />
-                            <Button onClick={() => console.log(currentPassword)} > Change </Button>
+                            <TextField required label={t('password')} type='password' value={currentPassword} variant='filled' onChange={(e) => setCurrentPassword(e.target.value)} />
+                            <TextField required label={t('New_password')} type='password' value={newPassword} variant='filled' onChange={(e) => setNewPassword(e.target.value)} />
+                            <TextField required label={t('repeat_new_password')} type='password' value={repeatNewPassword} variant='filled' onChange={(e) => setRepeatNewPassword(e.target.value)} />
+                            <Button onClick={() => console.log(currentPassword)} > {t('Change')} </Button>
                         </FormGroup>
                     </Stack>
                 </Card>

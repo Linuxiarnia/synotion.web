@@ -1,7 +1,9 @@
 {
+  "Change": "Change",
   "I_agree_to_TOS": "I agree to TOS",
   "Leaderboards": "Leaderboards",
   "Log_out": "Log out",
+  "New_password": "New password",
   "Play": "Play",
   "Profile": "Profile",
   "Settings": "Ustawienia",
@@ -34,8 +36,10 @@
     "reportQuestion": "Are you sure you want to report this picture?",
     "somethingWentWrong": "Something went wrong!"
   },
+  "password": "password",
   "points": "Points",
   "reload": "Reload",
+  "repeat_new_password": "repeat new password",
   "upload": "Upload",
   "username": "Username"
 }

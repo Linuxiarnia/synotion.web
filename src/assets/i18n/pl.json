@@ -1,7 +1,9 @@
 {
+  "Change": "Zmień",
   "I_agree_to_TOS": "Zgadzam się na TOS",
   "Leaderboards": "Tabele wyników",
   "Log_out": "Wyloguj się",
+  "New_password": "Nowe Hasło",
   "Play": "Graj",
   "Profile": "Profil",
   "Settings": "ustawienia",
@@ -34,8 +36,10 @@
     "reportQuestion": "Czy na pewno chcesz zgłośić to zdjęcie?",
     "somethingWentWrong": "Coś poszło nie tak!"
   },
+  "password": "Obecne hasło",
   "points": "Punkty",
   "reload": "Przeładuj",
+  "repeat_new_password": "Powtórz nowe hasło",
   "upload": "Wysyłanie zdjęć",
   "username": "Imie"
 }
