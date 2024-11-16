@@ -1,6 +1,6 @@
 import { Button, Card, FormControlLabel, FormGroup, Grid2, Stack, Switch, TextField } from '@mui/material';
 import React from 'react';
-import { useProvider } from 'src/context/ThemeContext';
+import { useProvider } from '@providers/ThemeContext';
 
 
 export const Settings = () => {

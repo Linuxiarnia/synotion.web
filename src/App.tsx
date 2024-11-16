@@ -1,66 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Route,  Routes } from 'react-router-dom';
 import { Layout } from './layout/Layout';
 import { Profile } from '@views/profile/profile';
 import { Leaderboards } from '@views/leaderboards/leaderboards';
 import { Settings } from '@views/settings/settings';
-import { useProvider } from './context/ThemeContext';
+import { useProvider } from './providers/ThemeContext';
 import { Login } from './views/login/Login';
 import { Game } from '@views/game/Game';
-import { Upload } from '@views/upload/Upload';
 import { Gallery } from '@views/gallery/gallery';
-
-
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Profile />
-    },
-    {
-        path: '/leaderboards',
-        element: <Leaderboards/>
-    },
-    {
-        path: '/profile',
-        element: <Profile/>
-    },
-    {
-        path: '/settings',
-        element: <Settings/>
-    },
-    {
-        path: '/login',
-        element: <Login/>
-    },
-    {
-        path: '/game',
-        element: <Game />
-    },
-    {
-        path: '/upload',
-        element: <Upload />
-    },
-    {
-        path: '/gallery',
-        element: <Gallery />
-    }
-]);
+import { Upload } from '@views/upload/upload';
 
 const App: React.FC = () => {
     // const location = useLocation();
-    const { theme, toggleTheme } = useProvider();
+    const { theme } = useProvider();
     const defaultTheme = createTheme();
 
     return (
         <ThemeProvider theme={theme || defaultTheme}>
             <CssBaseline />
-            <Layout>
-                <RouterProvider router={router}></RouterProvider>
-                {/* <Button onClick={() => toggleTheme}>
-                    ToggleTheme
-                </Button> */}
-            </Layout>
+            <BrowserRouter>
+                <Layout>
+                    <Routes>
+                        <Route element={<Profile />} path='/' />
+                        <Route element={<Leaderboards />} path='/leaderboards' />
+                        <Route element={<Profile />} path='/profile' />
+                        <Route element={<Settings />} path='/settings' />
+                        <Route element={<Gallery />} path='/gallery' />
+                        <Route element={<Game />} path='/game' />
+                        <Route element={<Login />} path='/login' />
+                        <Route element={<Upload />} path='/upload' />
+                    </Routes>
+                </Layout>
+            </BrowserRouter>
         </ThemeProvider>
     );
 };

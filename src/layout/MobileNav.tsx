@@ -1,7 +1,8 @@
-import { BrowseGallery, FileUpload, Gamepad, Person, Settings } from '@mui/icons-material';
-import { IconButton, Link, Stack, useTheme } from '@mui/material';
+import { BrowseGallery, Gamepad, Person, Settings } from '@mui/icons-material';
+import { Stack, useTheme } from '@mui/material';
 import React from 'react';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
+import { Link } from 'react-router-dom';
 
 
 
@@ -14,24 +15,21 @@ export const MobileNav: React.FC = () => {
             return theme.palette.text.primary;
         }
     };
-    return <Stack bgcolor={theme.palette.background.paper} bottom='0' direction={'row'} justifyContent={'space-between'} position={'sticky'} px={4} py={2} width={'100%'} zIndex={4}>
-        <IconButton LinkComponent={Link} href='/gallery'>
-            <BrowseGallery sx={{ color: generateFill('/gallery') }}  />
-        </IconButton>
-        <IconButton LinkComponent={Link} href='/profile'>
+    return <Stack bgcolor={theme.palette.background.paper} bottom='0' direction={'row'} justifyContent={'space-between'} p={4} position={'sticky'} width={'100%'} zIndex={4}>
+        <Link to='/galery'>
+            <BrowseGallery sx={{ color: generateFill('/profile') }}  />
+        </Link>
+        <Link to='/profile' onClick={() => {console.log('navigate');}}>
             <Person sx={{ color: generateFill('/profile') }}/>
-        </IconButton>
-        <IconButton LinkComponent={Link} href='/game'>
+        </Link>
+        <Link to='/game'>
             <Gamepad sx={{ color: generateFill('/game') }} />
-        </IconButton>
-        <IconButton LinkComponent={Link} href='/leaderboards'>
+        </Link>
+        <Link to='/leaderboards'>
             <LeaderboardIcon sx={{ color: generateFill('/leaderboards') }} />
-        </IconButton>
-        <IconButton LinkComponent={Link} href='/settings'>
+        </Link>
+        <Link to='/settings'>
             <Settings sx={{ color: generateFill('/settings') }} /> 
-        </IconButton> 
-        <IconButton LinkComponent={Link} href='/upload'>
-            <FileUpload sx={{ color: generateFill('/upload') }} /> 
-        </IconButton> 
+        </Link>
     </Stack>;
 };
