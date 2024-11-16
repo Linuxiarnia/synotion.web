@@ -1,1 +1,45 @@
-{"controls":{"anger":"Wściekłość","disgust":"Obrzydzenie","fear":"Strach","happy":"Radość","sad":"Smutek","surprise":"Zaskoczenie"}}
+{
+  "Change": "Zmień",
+  "I_agree_to_TOS": "Zgadzam się na TOS",
+  "Leaderboards": "Tabele wyników",
+  "Log_out": "Wyloguj się",
+  "New_password": "Nowe Hasło",
+  "Play": "Graj",
+  "Profile": "Profil",
+  "Settings": "ustawienia",
+  "Submit": "Prześlij",
+  "User_Gallery": "Gaelria urzytkownika",
+  "control": {
+    "report_media": "Zgłoś obraz"
+  },
+  "controls": {
+    "anger": "Wściekłość",
+    "disgust": "Obrzydzenie",
+    "fear": "Strach",
+    "happy": "Radość",
+    "next": "Następny",
+    "noEmotionsSelected": "Nie wybrano żadnych emocji",
+    "quit": "Wyjdź",
+    "sad": "Smutek",
+    "surprise": "Zaskoczenie"
+  },
+  "error": {
+    "modalAccept": "Kontynułuj",
+    "modalCancel": "Przerwij",
+    "modalUnderstand": "mam problem z tym zdjęciem >:3"
+  },
+  "level": "poziom",
+  "media": {
+    "couldntLoad": "Obraz nie mógł się załadować :(",
+    "counter": "obraz nr.",
+    "report": "Zgłoś zdjecie",
+    "reportQuestion": "Czy na pewno chcesz zgłośić to zdjęcie?",
+    "somethingWentWrong": "Coś poszło nie tak!"
+  },
+  "password": "Obecne hasło",
+  "points": "Punkty",
+  "reload": "Przeładuj",
+  "repeat_new_password": "Powtórz nowe hasło",
+  "upload": "Wysyłanie zdjęć",
+  "username": "Imie"
+}

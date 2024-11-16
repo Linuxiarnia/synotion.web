@@ -1,5 +1,6 @@
 import { Box, Card, Divider, Grid2, Typography, useTheme } from '@mui/material';
 import React from 'react';
+import { t } from 'i18next';
 
 interface playerEntry{
     position: number
@@ -46,19 +47,19 @@ export const Leaderboards = () => {
         <Card sx={{
             padding: '10px', margin: '10px', height: '80%' 
         }}>
-            <Typography>Leaderboards</Typography>
+            <Typography>{ t('Leaderboards')}</Typography>
             <Grid2 container justifyContent={'center'} key = {'legend'} spacing={2} sx={{
                 width: '90%', margin: 'auto', textAlign: 'center' 
             }}>
                 <Grid2 size={1}></Grid2>
                 <Grid2 size={7} sx={{ textAlign: 'left' }}>
-                    username
+                    {t('username')}
                 </Grid2>
                 <Grid2 size={2}>
-                    level
+                    {t('level')}
                 </Grid2>
                 <Grid2 size={2}>
-                    points
+                    {t('points')}
                 </Grid2>
             </Grid2>
             <Grid2 justifyContent={'center'}  sx={{
