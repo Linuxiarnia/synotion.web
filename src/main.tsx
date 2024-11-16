@@ -1,9 +1,25 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
+import { ThemeProvider } from './context/ThemeContext.tsx';
+// import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+
+// const router = createBrowserRouter([
+//     {
+//         path: '/',
+//         element: <App/>
+//     },
+//     {
+//         path: '/leaderboards',
+//         element: <App/>
+//     }
+// ]);
 
 createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <App />
+        <ThemeProvider>
+            <App></App>
+        </ThemeProvider>
     </React.StrictMode>
 );

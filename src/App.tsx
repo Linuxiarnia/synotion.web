@@ -1,21 +1,60 @@
 import React, { useState } from 'react';
 import { AppContent } from './AppContent';
-import { Button, CssBaseline, ThemeProvider, 
-    useMediaQuery } from '@mui/material';
-import { buildTheme } from '@theme/theme';
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Layout } from './layout/Layout';
+import { Profile } from '@views/profile/profile';
+import { Leaderboards } from '@views/leaderboards/leaderboards';
+import { Settings } from '@views/settings/settings';
+import { useTheme } from './context/ThemeContext';
+import { Login } from './login/Login';
+import { Game } from '@views/game/Game';
+
+
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: null
+    },
+    {
+        path: '/leaderboards',
+        element: <Leaderboards/>
+    },
+    {
+        path: '/profile',
+        element: <Profile/>
+    },
+    {
+        path: '/settings',
+        element: <Settings/>
+    },
+    {
+        path: '/login',
+        element: <Login/>
+    },
+    {
+        path: '/game',
+        element: <Game />
+    }
+]);
 
 const App: React.FC = () => {
-    const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-    const [mode, setMode] = useState<boolean>(isDarkMode);
-    const theme = buildTheme(mode);
+    // const location = useLocation();
+    const { theme, toggleTheme } = useTheme();
+    const defaultTheme = createTheme();
+
+    const [jwtoken, setJwtoken] = useState<string | null>(null);
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme || defaultTheme}>
             <CssBaseline />
-            <Button onClick={() => setMode(prev => !prev)}>
-                ToggleTheme
-            </Button>
             <AppContent />
+            <Layout>
+                <RouterProvider router={router}></RouterProvider>
+                {/* <Button onClick={() => toggleTheme}>
+                    ToggleTheme
+                </Button> */}
+            </Layout>
         </ThemeProvider>
     );
 };
