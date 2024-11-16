@@ -7,7 +7,7 @@ import i18n from 'src/i18n';
 
 export const Settings = () => {
 
-    const { mode, toggleTheme, jwtoken } = useProvider();
+    const { mode, toggleTheme, jwtoken, overWriteToken } = useProvider();
     const [currentPassword, setCurrentPassword] = React.useState('');
     const [newPassword, setNewPassword] = React.useState('');
     const [repeatNewPassword, setRepeatNewPassword] = React.useState('');
@@ -46,6 +46,8 @@ export const Settings = () => {
                     </Stack>
                 </Card>
             </Grid2>
+            {/* <div>TEST {jwtoken}</div> */}
         </Grid2>
+        
     );
 };
