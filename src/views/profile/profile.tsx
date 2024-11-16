@@ -3,12 +3,11 @@ import { Streak } from '@components/streak';
 import { Summary } from '@components/summary';
 import { UserElement } from '@components/userElement';
 import { Box, Grid2 } from '@mui/material';
-import React from 'react';
 
 import { UserElementProps } from '@components/userElement';
-import { SummaryProps, summaryElemnts } from '@components/summary';
+import { summaryElemnts } from '@components/summary';
 import { StreakProps } from '@components/streak';
-import { dataType, GraphProps } from '@components/graph';
+import { dataType } from '@components/graph';
 
 interface profileActivityData{
     UUID: string,
