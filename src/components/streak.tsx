@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import { Box } from '@mui/system';
 
-interface StreakProps {
+export interface StreakProps {
     streak: number;
 }
 

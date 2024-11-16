@@ -1,21 +1,21 @@
 import { Box } from '@mui/material';
 import React from 'react';
 
-interface summaryElemnts {
+export interface summaryElemnts {
     n: string;
     v: number;
 }
 
-interface SummaryProps {
+export interface SummaryProps {
     summary: summaryElemnts[];
 }
 
-export const Summary = (props: SummaryProps) => {
+export const Summary = ({ summary }: SummaryProps) => {
     return (
         <Box style={{ width:'100%'/*tutaj szerokość summary do edycji :) */ }}>
             <h1>Summary</h1>
             <table style={{ width:'100%' }}>
-                {props.summary.map((element, index) => {
+                {summary.map((element, index) => {
                     return (
                         <tr key={index} >
                             <td style={{ textAlign: 'left' }}>{element.n}</td>
