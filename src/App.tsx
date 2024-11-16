@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { AppContent } from './AppContent';
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './layout/Layout';
@@ -48,7 +47,6 @@ const App: React.FC = () => {
     return (
         <ThemeProvider theme={theme || defaultTheme}>
             <CssBaseline />
-            <AppContent />
             <Layout>
                 <RouterProvider router={router}></RouterProvider>
                 {/* <Button onClick={() => toggleTheme}>

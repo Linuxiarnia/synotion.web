@@ -17,7 +17,7 @@ export const NavBar = () => {
 
     return(
         <Box className='navigation' sx={{
-            borderRightColor: theme.palette.primary.main, borderWidth: '3px', borderRightStyle: 'solid' 
+            borderRightColor: theme.palette.primary.main, borderWidth: '3px', borderRightStyle: 'solid', maxWidth: '300px'
         }}>
 
             <span>
@@ -27,7 +27,7 @@ export const NavBar = () => {
                     </Typography>
                 </Box>  
                 <div className='navContainer'>
-                    <Box><MyButton href='/'>Icon: Play</MyButton></Box>
+                    <Box><MyButton href='/game'>Icon: Play</MyButton></Box>
                     <Box><MyButton href = '/leaderboards'>Leaderboards</MyButton></Box>
                     <Box><MyButton href = '/profile'>Profile</MyButton></Box>
                     <Box><MyButton href = '/settings'>Settings</MyButton></Box>
